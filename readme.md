@@ -20,7 +20,11 @@ read and run do-tasks.md will start the task1 and task2 subagents in parallel, h
 
 The model you use to orchestrate (run) the subagents can be any model. For this simple example I started the subagent with haiku and opus.
 
-Each subagent will use the haiku model (as currently written in do-tasks.md). You can change the model to any other model you want to use.  The subagents will run in parallel and write their results to their own result.md files.
+Each subagent with Claude will use the haiku model (as currently written in do-tasks.md). You can change the model to any other model you want to use.  The subagents will run in parallel and write their results to their own result.md files.
+
+Tested the do-tasks.claude.md with claude cowork and claude code on models haiku and opus models.  
+Tested the do-tasks-codex.md with codex with model gpt-6-luna
+Tested the codex do-tasks-codex.md with claude code with model haiku (does not set the model)
 
 ## File structure
 
@@ -28,6 +32,8 @@ Each subagent will use the haiku model (as currently written in do-tasks.md). Yo
 subagents/
 ├── readme.md            ← this file: what the example is and how it works
 ├── do-tasks.md          ← orchestrator instructions; "read and run do-tasks.md" starts both subagents
+├── do-tasks-claude.md   ← orchestrator instructions; claude
+├── do-tasks-codex.md    ← orchestrator instructions; codex
 ├── clean-results.bat    ← deletes task1\result.md and task2\result.md for a fresh run
 │
 ├── task1/               ← subagent A's folder (Raleigh, NC weather)
